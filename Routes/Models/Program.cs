@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Builder;
-using ServeList.Admin;
 using ServeList.Makanan;
-using ServeList.Pesanan;
 var builder = WebApplication.CreateBuilder(args);
 
 // Enable CORS for all origins (for development only)
@@ -19,6 +17,10 @@ builder.Services.AddCors(options =>
 // Make app listen on all network interfaces (important for LAN access)
 builder.WebHost.UseUrls("http://0.0.0.0:5000");
 
+// Set DB path
+var dbPath = Path.Combine(Directory.GetCurrentDirectory(), "Routes", "Server", "data.db");
+// Register SQLite-based service
+builder.Services.AddSingleton(new MakananServices(dbPath));
 var app = builder.Build();
 
 // Use the CORS policy
@@ -26,15 +28,14 @@ app.UseCors("AllowAll");
 
 // Minimal Hello World endpoint
 app.MapGet("/nama", () =>
-  Results.Json(new {
-      depan="Bodi",
-      belakang="Sumatra"
-    })
+  Results.Json(new
+  {
+      depan = "Bodi",
+      belakang = "Sumatra"
+  })
    );
 // Daftar Routes 
 
-app.MapAdminRoutes();
 app.MakananRoutes();
-app.PesananRoutes();
 app.Run();
 
