@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API-ANDROID")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49445adfa96dd4ead9fde3f85a35ad35e78b2bfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e0f03fbac90932baaec5f4083d5a2b7ac995030")]
 [assembly: System.Reflection.AssemblyProductAttribute("API-ANDROID")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API-ANDROID")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

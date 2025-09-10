@@ -26,16 +26,7 @@ var app = builder.Build();
 // Use the CORS policy
 app.UseCors("AllowAll");
 
-// Minimal Hello World endpoint
-app.MapGet("/nama", () =>
-  Results.Json(new
-  {
-      depan = "Bodi",
-      belakang = "Sumatra"
-  })
-   );
 // Daftar Routes 
-
 app.MakananRoutes();
 app.Run();
 
